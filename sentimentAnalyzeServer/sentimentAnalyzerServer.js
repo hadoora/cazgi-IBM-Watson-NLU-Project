@@ -62,8 +62,8 @@ app.get("/url/emotion", (req,res) => {
       naturalLanguageUnderstanding.analyze(analyzeParams)
       .then(analysisResults => {
     
-       //console.log(JSON.stringify(analysisResults, null, 2));   
-       //return res.send(analysisResults.result.keywords[0].emotion,null,2);
+       // console.log(JSON.stringify(analysisResults, null, 2));   
+       // return res.send(analysisResults.result.keywords[0].emotion,null,2);
           
           res.send(JSON.stringify(analysisResults, null, 2));
      })
@@ -89,8 +89,10 @@ app.get("/url/sentiment", (req,res) =>{
         const naturalLanguageUnderstanding = getNLUInstance();
         naturalLanguageUnderstanding.analyze(analyzeParams)
 .then(analysisResults => {
-console.log(JSON.stringify(analysisResults, null, 2)); 
-return res.send(analysisResults.result.keywords[0].sentiment,null,2);
+// console.log(JSON.stringify(analysisResults, null, 2)); 
+// return res.send(analysisResults.result.keywords[0].sentiment,null,2);
+               
+          res.send(JSON.stringify(analysisResults, null, 2));
 })
   .catch(err => {
     return res.send("Could not do desired operation "+err);
@@ -114,8 +116,10 @@ app.get("/text/emotion", (req,res) => {
 
         naturalLanguageUnderstanding.analyze(analyzeParams)
         .then(analysisResults => {
-        console.log(JSON.stringify(analysisResults, null, 2));   
- return res.send(analysisResults.result.keywords[0].emotion,null,2);
+        // console.log(JSON.stringify(analysisResults, null, 2));   
+        // return res.send(analysisResults.result.keywords[0].emotion,null,2);
+               
+          res.send(JSON.stringify(analysisResults, null, 2));
 })
         .catch(err => {
             return res.send("Could not do desired operation "+err);
@@ -139,8 +143,10 @@ app.get("/text/sentiment", (req,res) => {
 
         naturalLanguageUnderstanding.analyze(analyzeParams)
         .then(analysisResults => {
-        console.log(JSON.stringify(analysisResults, null, 2));
- return res.send(analysisResults.result.keywords[0].sentiment,null,2);
+        // console.log(JSON.stringify(analysisResults, null, 2));
+        // return res.send(analysisResults.result.keywords[0].sentiment,null,2);
+               
+          res.send(JSON.stringify(analysisResults, null, 2));
      })
         .catch(err => {
             return res.send("Could not do desired operation "+err);
